@@ -1,8 +1,11 @@
 'use strict';
+
+const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+
 $(function() {
 
 function getMovies(query) {
-    fetch("http://omdbapi.com/?s=" + query + "&apikey=thewdb")
+    fetch(`${proxyUrl}http://omdbapi.com/?s=${query}&apikey=thewdb`)
     .then(
         successResponse => {
             if (successResponse.status != 200) {
